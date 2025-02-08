@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposal for Maitri 💖</title>
+    <title>A Special Question for You 💖</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #ffe6f2;
-            overflow: hidden; /* Prevent scrolling when button moves */
+            background-color: #fff5f8;
+            overflow: hidden;
         }
         h1 {
-            color: #ff4d79;
+            color: #ff3366;
         }
         #proposal {
-            font-size: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
             margin-top: 20px;
+            padding: 0 20px;
         }
         .btn {
-            background-color: #ff4d79;
+            background-color: #ff3366;
             color: white;
             border: none;
             padding: 15px 30px;
@@ -30,7 +33,7 @@
             position: absolute;
         }
         .btn:hover {
-            background-color: #e6005c;
+            background-color: #cc0052;
         }
         #yes {
             position: relative;
@@ -44,25 +47,48 @@
             color: #ff0066;
             margin-top: 20px;
         }
+        #heart {
+            font-size: 50px;
+            display: none;
+            animation: heartbeat 1.5s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
     </style>
 </head>
 <body>
 
-    <h1>Hey Maitri, 💕</h1>
-    <p id="proposal">You are the <b>HTML</b> to my <b>CSS</b>, the <b>JavaScript</b> to my <b>functions</b>. <br>
-    Without you, my code wouldn't run properly. <br> Will you be my forever debugging partner? 💖</p>
+    <h1>Dear Maitri, 💕</h1>
+    <p id="proposal">
+        From the moment you walked into my life, everything changed. You’ve brought joy into my ordinary days, warmth into my coldest nights, and love into places I never knew were empty.
+
+        With you, every little moment feels special, every laughter feels deeper, and every silence feels comforting. You are my safe place, my happiest thought, and my greatest adventure.
+        
+        So today, I just have one question for you…
+        
+    </p>
+    <h1>Will you be my forever?💖</h1>
+
     
-    <button id="yes" class="btn" onclick="respond('Yes')">YES 💖</button>
+    <button id="yes" class="btn" onclick="respond()">YES 💖</button>
     <button id="no" class="btn" onmouseover="moveButton()" ontouchstart="moveButton()">NO 💔</button>
 
     <p id="response"></p>
+    <p id="heart">❤️</p>
 
     <script>
-        function respond(answer) {
-            if (answer === "Yes") {
-                document.getElementById("response").innerHTML = "Yay! Our love script will run forever! ❤️💍";
-            }
-        }
+        function respond() {
+    document.getElementById("proposal").innerHTML = "You just made my world perfect! 💖";
+    document.getElementById("response").innerHTML = "I promise to always be by your side, through every moment of life. 💍✨";
+    document.getElementById("heart").style.display = "block";
+    
+    // Hide the NO button
+    document.getElementById("no").style.display = "none";
+}
+
 
         function moveButton() {
             let x = Math.random() * (window.innerWidth - 100);
