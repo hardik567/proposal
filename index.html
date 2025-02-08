@@ -9,6 +9,7 @@
             font-family: Arial, sans-serif;
             text-align: center;
             background-color: #ffe6f2;
+            overflow: hidden; /* Prevent scrolling when button moves */
         }
         h1 {
             color: #ff4d79;
@@ -52,7 +53,7 @@
     Without you, my code wouldn't run properly. <br> Will you be my forever debugging partner? 💖</p>
     
     <button id="yes" class="btn" onclick="respond('Yes')">YES 💖</button>
-    <button id="no" class="btn" onmouseover="moveButton()">NO 💔</button>
+    <button id="no" class="btn" onmouseover="moveButton()" ontouchstart="moveButton()">NO 💔</button>
 
     <p id="response"></p>
 
